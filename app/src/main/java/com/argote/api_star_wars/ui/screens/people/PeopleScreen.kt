@@ -8,22 +8,22 @@ import androidx.compose.foundation.shape.CornerSize
 import androidx.compose.material.*
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.painter.Painter
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
+import androidx.navigation.NavController
 import androidx.paging.PagingData
 import androidx.paging.compose.collectAsLazyPagingItems
 import androidx.paging.compose.items
 import com.argote.api_star_wars.R
 import com.argote.api_star_wars.domain.remote.Person
+import dagger.hilt.EntryPoint
+import dagger.hilt.android.HiltAndroidApp
 import kotlinx.coroutines.flow.Flow
 
 @Composable
-fun PeopleScreen() {
-
-    val peopleViewModel: PeopleViewModel = viewModel()
-    val data: Flow<PagingData<Person>> = peopleViewModel.getPeople()
+fun PeopleScreen(navController: NavController, viewModel: PeopleViewModel) {
+    val data: Flow<PagingData<Person>> = viewModel.getPeople()
     PeopleList(data)
 }
 

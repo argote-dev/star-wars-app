@@ -10,6 +10,7 @@ import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import com.argote.api_star_wars.navigation.AppNavigation
 import com.argote.api_star_wars.ui.screens.people.PeopleScreen
 import com.argote.api_star_wars.ui.theme.ApistarwarsTheme
 import dagger.hilt.android.AndroidEntryPoint
@@ -25,7 +26,7 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colors.background,
                 ) {
-                    PeopleScreen()
+                    AppNavigation()
                 }
             }
         }
@@ -33,15 +34,8 @@ class MainActivity : ComponentActivity() {
     }
 }
 
-@Composable
-fun Greeting(name: String) {
-    Text(text = "Hello $name!")
-}
-
 @Preview(showBackground = true)
 @Composable
 fun DefaultPreview() {
-    ApistarwarsTheme {
-        Greeting("Android")
-    }
+    ApistarwarsTheme {}
 }
