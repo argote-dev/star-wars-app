@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">api-star-wars</string>
+    <string name="people.title">People</string>
 </resources>
